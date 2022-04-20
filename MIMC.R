@@ -25,7 +25,7 @@ score_sheet[1, is.na(score_sheet[1, ])] <- "Total.Score"
 names(score_sheet) <- score_sheet[1, ]
 score_sheet <- score_sheet[-1, ]
 
-# Convert score sheet answers into boolean values (true = correct).
+# Calculate total scores.
 score_sheet <- score_sheet %>%
   dplyr::mutate(Total.Score = (Q.1 == answer_key$Q.1) +
                   (Q.2 == answer_key$Q.2) +
